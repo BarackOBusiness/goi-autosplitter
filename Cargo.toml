@@ -1,0 +1,15 @@
+[package]
+name = "goi-livesplit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+asr = { git = "https://github.com/Jujstme/asr", branch = "unity_pointer", features = [
+  "unity"
+] }
+tokio = { version = "1.37.0", features = ["time"] }
+
+[lib]
+crate-type = ["cdylib"]
