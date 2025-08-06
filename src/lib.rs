@@ -39,7 +39,8 @@ async fn main() -> () {
     set_tick_rate(1000.0);
 
     loop {
-        let process = Process::wait_attach("GettingOverIt.exe").await;
+        // Linux process names are limited to 15 characters
+        let process = Process::wait_attach("GettingOverIt.e").await;
 
         let module = if let Some(v) = Module::attach(&process, Version::V2) {
             v
